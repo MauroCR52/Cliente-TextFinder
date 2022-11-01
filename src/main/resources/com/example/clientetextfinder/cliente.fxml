@@ -1,21 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="321.0" prefWidth="411.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.clientetextfinder.Controller">
-    <children>
-        <Button fx:id="enviarButton" layoutX="345.0" layoutY="282.0" mnemonicParsing="false" text="Enviar"/>
-        <TextField fx:id="mensajeText" layoutX="14.0" layoutY="282.0" prefHeight="25.0" prefWidth="326.0"/>
-        <ScrollPane fx:id="ScrollMain" fitToWidth="true" layoutX="14.0" layoutY="55.0" prefHeight="212.0"
-                    prefWidth="380.0">
-            <content>
-                <VBox fx:id="mensajeVBOX" prefHeight="210.0" prefWidth="378.0"/>
-            </content>
-        </ScrollPane>
-    </children>
-</AnchorPane>
+<BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clientetextfinder.Controller">
+   <top>
+      <AnchorPane prefHeight="270.0" prefWidth="411.0" BorderPane.alignment="CENTER">
+          <children>
+              <Button fx:id="enviarButton" layoutX="349.0" layoutY="233.0" mnemonicParsing="false" text="Enviar" />
+              <TextField fx:id="mensajeText" layoutX="16.0" layoutY="233.0" prefHeight="25.0" prefWidth="326.0" />
+              <ScrollPane fx:id="ScrollMain" fitToWidth="true" layoutX="16.0" layoutY="14.0" prefHeight="212.0" prefWidth="380.0">
+                  <content>
+                      <VBox fx:id="mensajeVBOX" prefHeight="210.0" prefWidth="378.0" />
+                  </content>
+              </ScrollPane>
+          </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="241.0" prefWidth="411.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="listView" layoutY="27.0" prefHeight="213.0" prefWidth="411.0" />
+            <MenuBar fx:id="menuBar" layoutY="2.0" prefHeight="25.0" prefWidth="411.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Ordenar por:">
+                  <items>
+                    <MenuItem fx:id="nomButton" mnemonicParsing="false" onAction="#ordenarNombre" text="Nombre" />
+                        <MenuItem fx:id="tamButton" mnemonicParsing="false" onAction="#ordenarTamano" text="Tamaño" />
+                        <MenuItem fx:id="fechaButton" mnemonicParsing="false" onAction="#ordenarFecha" text="Fecha" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Button fx:id="verButton" layoutY="239.0" mnemonicParsing="false" onAction="#verDocs" text="Ver Documentos" />
+            <Button fx:id="abrirButton" layoutX="368.0" layoutY="240.0" mnemonicParsing="false" onAction="#abrirDoc" text="Abrir" />
+            <Button fx:id="agregarButton" layoutX="107.0" layoutY="240.0" mnemonicParsing="false" onAction="#agregarDocs" text="Agregar Documentos" />
+            <Button fx:id="borrarButton" layoutX="237.0" layoutY="240.0" mnemonicParsing="false" onAction="#borrarDoc" text="Borrar" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

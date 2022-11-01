@@ -25,6 +25,12 @@
             <artifactId>javafx-fxml</artifactId>
             <version>18</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>2.0.22</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -60,7 +66,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.clientetextfinder/com.example.clientetextfinder.HelloApplication
+                            <mainClass>com.example.clientetextfinder/com.example.clientetextfinder.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
